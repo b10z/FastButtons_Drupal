@@ -1,0 +1,21 @@
+fast_buttons:
+  version: 0.1
+  css:
+    state:
+      css/fast_buttons.css: {}
+  js:
+    js/fast_buttons.js: { attributes: { defer: true } }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery.cookie
+fast_buttons_extensive:
+  version: 0.1
+  css:
+    state:
+      css/fast_buttons_extensive.css: {}
+  js:
+    js/fast_buttons_extensive.js: {}    
+  

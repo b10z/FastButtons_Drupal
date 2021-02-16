@@ -1,0 +1,10 @@
+fast_buttons.settings:
+  type: config_object
+  label: 'FastButtons settings'
+  mapping:
+    displayOption:
+      type: string
+      label: 'Radio Selection'
+    langcode:
+      type: string
+      label: 'Language code'

@@ -1,0 +1,7 @@
+fast_buttons.admin_settings:
+  path: '/admin/config/user-interface/fastbuttons'
+  defaults:
+   _form: '\Drupal\fast_buttons\Form\FastbuttonsSettingsForm'
+   _title: 'Fast Buttons Settings'
+  requirements:
+    _permission: 'administer fast_buttons'

@@ -1,0 +1,25 @@
+<?php
+
+ /**
+   * page_attachments_alter_hook
+   */
+function fast_buttons_page_attachments_alter(array &$attachments) {
+
+		$path=\Drupal::service('path.current')->getPath();
+		
+		if($path == '/admin/modules' || $path == '/admin/modules/uninstall' ){
+			$config = \Drupal::config('fast_buttons.settings');
+    		$def = $config->get('displayOption');
+    		if ($def == 'simple' ){
+				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons';
+				$attachments['#attached']['drupalSettings'][] = 'fast_buttons/fast_buttons';
+				
+			}
+			if ($def == 'sticky' ){
+				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons_extensive';
+				$attachments['#attached']['drupalSettings'][] = 'fast_buttons/fast_buttons_extensive';
+				
+			}
+
+	}
+	}
