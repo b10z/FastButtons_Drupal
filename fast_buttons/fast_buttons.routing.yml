@@ -5,3 +5,9 @@ fast_buttons.admin_settings:
    _title: 'Fast Buttons Settings'
   requirements:
     _permission: 'administer fast_buttons'
+fast_buttons.clear_cache:
+  path: '/fast_buttons/flush'
+  defaults:
+    _controller: '\Drupal\fast_buttons\Controller\CacheController::clear'
+  requirements:
+    _access: 'TRUE'

@@ -1,0 +1,15 @@
+@media screen and (max-width: 600px){
+.flushStickyFastButtons{
+	width: 80%;
+    margin-right: 9% !important;
+    margin-top: 1%;
+}
+
+.flushFastButtons{
+    width: 80%;
+    margin-left: 9% !important;
+    margin-top: 1%;
+}
+
+
+}

@@ -29,13 +29,24 @@ class FastButtonsSettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = \Drupal::config('fast_buttons.settings');
-    $def = $config->get('displayOption');
+    $def_display = $config->get('displayOption');
+    //display options - string
     $form['fast_buttons_types'] = [
       '#type' => 'radios',
       '#title' => $this->t('Select Display Style: '),
       '#description' => $this->t('Currently two methods of displaying FastButtons are available.'),
       '#options' => ['simple' => $this->t('Simple'), 'sticky' => $this->t('Sticky')],
-      '#default_value' => $def,
+      '#default_value' => $def_display,
+    ];
+
+    $def_flush = $config->get('flushOption');
+    //flush all checkbox - boolean
+    $form['fast_buttons_option'] = [
+      '#description' => $this->t('A fast way to clear all caches from "Extend" tab'),
+      '#type' => 'checkbox',
+      '#title' => $this->t('Display "Flush All" Button'),
+      '#default_value' => $def_flush,
+  
     ];
   
     return parent::buildForm($form, $form_state);
@@ -50,6 +61,7 @@ class FastButtonsSettingsForm extends ConfigFormBase {
   
     $config = \Drupal::service('config.factory')->getEditable('fast_buttons.settings');
     $config->set('displayOption', $form_state->getValue('fast_buttons_types'));
+    $config->set('flushOption', $form_state->getValue('fast_buttons_option'));
     $config->save();
 
 
