@@ -1,6 +1,13 @@
 # FastButtons_Drupal
 A small module that allows users to dublicate or make sticky the "Install" and "Uninstall" buttons under "admin/modules" location.
 Implemented using a List and a page_attachments_alter hook. Also a small settings section is located under "admin/config/user-interface/fastbuttons" on which the user can select the display option. 
+
+
+**Update 8/3/21 <br/>
+-An optional button for flushing the cache has been added. Enable it under admin/settings/. <br/>
+-Some code rework. Mainly the JS files
+
+
 <br/>
 <br/>
 
