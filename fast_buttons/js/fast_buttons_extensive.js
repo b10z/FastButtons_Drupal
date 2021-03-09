@@ -1,23 +1,13 @@
-(function ($, Drupal, drupalSettings) {
-
-  'use strict';
-
-  var initialized;
-
-    function init() {
-    if (!initialized) {
-      initialized = true;
-      var sticky_button = document.getElementById('edit-actions');
-    	sticky_button.classList.add("stickyFastButtons");
-    }
-  }
-
-
-  Drupal.behaviors.mybehavior = {
+(function ($, Drupal) {
+  Drupal.behaviors.fastButtonSticky = {
     attach: function (context, settings) {
-     init();
-      
+      $('main', context).once('fastButtonSticky').each(function () {
+        // Apply only once
+         var sticky_button = document.getElementById('edit-actions');
+         sticky_button.classList.add("stickyFastButtons");
+      });
     }
   };
+})(jQuery, Drupal);
 
-})(jQuery, Drupal, drupalSettings);
+

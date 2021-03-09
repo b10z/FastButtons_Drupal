@@ -1,5 +1,5 @@
 fast_buttons:
-  version: 0.1
+  version: 0.2
   css:
     state:
       css/fast_buttons.css: {}
@@ -12,10 +12,26 @@ fast_buttons:
     - core/jquery.once
     - core/jquery.cookie
 fast_buttons_extensive:
-  version: 0.1
+  version: 0.2
   css:
     state:
       css/fast_buttons_extensive.css: {}
   js:
-    js/fast_buttons_extensive.js: {}    
+    js/fast_buttons_extensive.js: { attributes: { defer: true } }
+
+fast_buttons_flush:
+  version: 0.1
+  css:
+    state:
+      css/fast_buttons_flush.css: {}
+  js:
+    js/fast_buttons_flush.js: {}
+  
+fast_buttons_flush_extensive:
+  version: 0.1
+  css:
+    state:
+      css/fast_buttons_flush.css: {}
+  js:
+    js/fast_buttons_flush_extensive.js: {}
   

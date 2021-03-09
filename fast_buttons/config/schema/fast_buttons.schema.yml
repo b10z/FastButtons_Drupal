@@ -8,3 +8,6 @@ fast_buttons.settings:
     langcode:
       type: string
       label: 'Language code'
+    flushOption:
+      type: boolean
+      label: 'Show Flush All Button'

@@ -8,17 +8,23 @@ function fast_buttons_page_attachments_alter(array &$attachments) {
 		$path=\Drupal::service('path.current')->getPath();
 		
 		if($path == '/admin/modules' || $path == '/admin/modules/uninstall' ){
+			$path=\Drupal::service('path.current')->getPath();
 			$config = \Drupal::config('fast_buttons.settings');
-    		$def = $config->get('displayOption');
-    		if ($def == 'simple' ){
-				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons';
-				$attachments['#attached']['drupalSettings'][] = 'fast_buttons/fast_buttons';
-				
+    		$def_display = $config->get('displayOption');
+    		$def_flush = $config->get('flushOption');
+    		if ($def_display == 'simple' ){
+    			if($def_flush == true ){
+    				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons';
+					$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons_flush';
+    			}else
+    				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons';	
 			}
-			if ($def == 'sticky' ){
-				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons_extensive';
-				$attachments['#attached']['drupalSettings'][] = 'fast_buttons/fast_buttons_extensive';
-				
+			if ($def_display == 'sticky' ){
+				if($def_flush == true ){
+    				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons_extensive';
+					$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons_flush_extensive';
+    			}else
+    				$attachments['#attached']['library'][] = 'fast_buttons/fast_buttons_extensive';
 			}
 
 	}
